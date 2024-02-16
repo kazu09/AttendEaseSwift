@@ -17,6 +17,7 @@
 		96715DFB2B77B02500C66EB6 /* AttendEaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96715DFA2B77B02500C66EB6 /* AttendEaseTests.swift */; };
 		96715E052B77B02500C66EB6 /* AttendEaseUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96715E042B77B02500C66EB6 /* AttendEaseUITests.swift */; };
 		96715E072B77B02500C66EB6 /* AttendEaseUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96715E062B77B02500C66EB6 /* AttendEaseUITestsLaunchTests.swift */; };
+		96A3D9A32B7CFA7D007DC8D6 /* AttendanceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A3D9A22B7CFA7D007DC8D6 /* AttendanceViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		96715E002B77B02500C66EB6 /* AttendEaseUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AttendEaseUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		96715E042B77B02500C66EB6 /* AttendEaseUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendEaseUITests.swift; sourceTree = "<group>"; };
 		96715E062B77B02500C66EB6 /* AttendEaseUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendEaseUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		96A3D9A22B7CFA7D007DC8D6 /* AttendanceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendanceViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +107,7 @@
 				96715DE22B77B02100C66EB6 /* SceneDelegate.swift */,
 				96715DE42B77B02100C66EB6 /* ViewController.swift */,
 				96715DE62B77B02100C66EB6 /* Main.storyboard */,
+				96A3D9A22B7CFA7D007DC8D6 /* AttendanceViewModel.swift */,
 				96715DEC2B77B02500C66EB6 /* Assets.xcassets */,
 				96715DEE2B77B02500C66EB6 /* LaunchScreen.storyboard */,
 				96715DF12B77B02500C66EB6 /* Info.plist */,
@@ -263,6 +266,7 @@
 			files = (
 				96715DE52B77B02100C66EB6 /* ViewController.swift in Sources */,
 				96715DEB2B77B02100C66EB6 /* AttendEase.xcdatamodeld in Sources */,
+				96A3D9A32B7CFA7D007DC8D6 /* AttendanceViewModel.swift in Sources */,
 				96715DE12B77B02100C66EB6 /* AppDelegate.swift in Sources */,
 				96715DE32B77B02100C66EB6 /* SceneDelegate.swift in Sources */,
 			);
