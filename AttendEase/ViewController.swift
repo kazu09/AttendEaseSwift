@@ -10,7 +10,11 @@ import UIKit
 class ViewController: UIViewController {
 
     var viewModel: AttendanceViewModel!
+    @IBOutlet weak var attendance: UIButton!
+    @IBOutlet weak var leaving: UIButton!
     @IBOutlet weak var date_time: UILabel!
+    let userId: Int64 = 1
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -23,26 +27,36 @@ class ViewController: UIViewController {
 
     @IBAction func attendance(_ sender: UIButton) {
         date_time.text = getDateTime()
-        let userId: Int64 = 1
         let date = getCurrentDate()
         let timeIn = getCurrentUnixTime()
         viewModel.insertAttendanceRecord(userId: userId, date: date, timeIn: timeIn)
+        disabledButton()
     }
     
     @IBAction func leaving(_ sender: UIButton) {
         date_time.text = getDateTime()
-        let userId: Int64 = 1
         let date = getCurrentDate()
         let timeOut = getCurrentUnixTime()
         viewModel.updateAttendanceRecord(userId: userId, date: date, timeOut: timeOut)
+        disabledButton()
+    }
+
+    @IBAction func dowmload(_ sender: UIButton) {
+        
+    }
+    
+    // デバッグ用：後ほど削除
+    @IBAction func deleteButton(_ sender: UIButton) {
+        viewModel.allDeleteAttendanceRecords(forUserId: userId)
     }
     
     private func initView() {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context = appDelegate.persistentContainer.viewContext
         viewModel = AttendanceViewModel(context: context)
-        
+    
         date_time.text = getDateTime()
+        disabledButton()
     }
     
     private func getDateTime() -> String {
@@ -62,6 +76,22 @@ class ViewController: UIViewController {
     
     private func getCurrentUnixTime() -> Int64 {
         return Int64(Date().timeIntervalSince1970)
+    }
+    
+    private func disabledButton() {
+        let date = getCurrentDate()
+        let records = viewModel.fetchAttendanceRecords(forDate: date)
+        for record in records  {
+            print("Record: userId=\(record.userId), date=\(record.date ?? "nil"), timeIn=\(record.timeIn), timeOut=\(record.timeOut)")
+            if (record.date != nil) {
+                attendance.isEnabled = false
+                attendance.backgroundColor = UIColor(colorCode: "AAAAAA")
+            }
+            if (record.timeOut != 0) {
+                leaving.isEnabled = false
+                leaving.backgroundColor = UIColor(colorCode: "AAAAAA")
+            }
+        }
     }
 }
 

@@ -18,6 +18,7 @@
 		96715E052B77B02500C66EB6 /* AttendEaseUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96715E042B77B02500C66EB6 /* AttendEaseUITests.swift */; };
 		96715E072B77B02500C66EB6 /* AttendEaseUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96715E062B77B02500C66EB6 /* AttendEaseUITestsLaunchTests.swift */; };
 		96A3D9A32B7CFA7D007DC8D6 /* AttendanceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A3D9A22B7CFA7D007DC8D6 /* AttendanceViewModel.swift */; };
+		96FF31812B805BCB00ED2644 /* UiColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96FF31802B805BCB00ED2644 /* UiColor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		96715E042B77B02500C66EB6 /* AttendEaseUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendEaseUITests.swift; sourceTree = "<group>"; };
 		96715E062B77B02500C66EB6 /* AttendEaseUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendEaseUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		96A3D9A22B7CFA7D007DC8D6 /* AttendanceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendanceViewModel.swift; sourceTree = "<group>"; };
+		96FF31802B805BCB00ED2644 /* UiColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UiColor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,11 +105,12 @@
 		96715DDF2B77B02100C66EB6 /* AttendEase */ = {
 			isa = PBXGroup;
 			children = (
+				96FF317F2B805B3900ED2644 /* utils */,
+				96FF317E2B805AFF00ED2644 /* model */,
 				96715DE02B77B02100C66EB6 /* AppDelegate.swift */,
 				96715DE22B77B02100C66EB6 /* SceneDelegate.swift */,
 				96715DE42B77B02100C66EB6 /* ViewController.swift */,
 				96715DE62B77B02100C66EB6 /* Main.storyboard */,
-				96A3D9A22B7CFA7D007DC8D6 /* AttendanceViewModel.swift */,
 				96715DEC2B77B02500C66EB6 /* Assets.xcassets */,
 				96715DEE2B77B02500C66EB6 /* LaunchScreen.storyboard */,
 				96715DF12B77B02500C66EB6 /* Info.plist */,
@@ -131,6 +134,22 @@
 				96715E062B77B02500C66EB6 /* AttendEaseUITestsLaunchTests.swift */,
 			);
 			path = AttendEaseUITests;
+			sourceTree = "<group>";
+		};
+		96FF317E2B805AFF00ED2644 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				96A3D9A22B7CFA7D007DC8D6 /* AttendanceViewModel.swift */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		96FF317F2B805B3900ED2644 /* utils */ = {
+			isa = PBXGroup;
+			children = (
+				96FF31802B805BCB00ED2644 /* UiColor.swift */,
+			);
+			path = utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -265,6 +284,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				96715DE52B77B02100C66EB6 /* ViewController.swift in Sources */,
+				96FF31812B805BCB00ED2644 /* UiColor.swift in Sources */,
 				96715DEB2B77B02100C66EB6 /* AttendEase.xcdatamodeld in Sources */,
 				96A3D9A32B7CFA7D007DC8D6 /* AttendanceViewModel.swift in Sources */,
 				96715DE12B77B02100C66EB6 /* AppDelegate.swift in Sources */,

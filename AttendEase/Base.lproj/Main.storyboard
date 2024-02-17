@@ -63,6 +63,9 @@
                                         <integer key="value" value="18"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="dowmload:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YsT-Ac-TST"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2000/12/31 01:01:01" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WLc-67-tia">
                                 <rect key="frame" x="0.0" y="400" width="430" height="30"/>
@@ -70,18 +73,29 @@
                                 <color key="textColor" red="0.73333333333333328" green="0.73333333333333328" blue="0.73333333333333328" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LkS-xi-ha1">
+                                <rect key="frame" x="168" y="448.66666666666669" width="94" height="35"/>
+                                <color key="backgroundColor" systemColor="systemGray3Color"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="デバッグ"/>
+                                <connections>
+                                    <action selector="deleteButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xUL-3a-37p"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="1hB-xi-p8t" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="180" id="2ax-BR-HX1"/>
                             <constraint firstItem="oFi-3B-I6e" firstAttribute="top" secondItem="1hB-xi-p8t" secondAttribute="bottom" constant="60" id="32V-4j-yX3"/>
+                            <constraint firstItem="LkS-xi-ha1" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="3Hg-Ze-U2a"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="1hB-xi-p8t" secondAttribute="trailing" constant="80" id="5sD-QK-PDX"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="iME-FD-mLV" secondAttribute="bottom" constant="60" id="F7n-gS-qgh"/>
                             <constraint firstItem="oFi-3B-I6e" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="GHw-zH-6UX"/>
                             <constraint firstItem="iME-FD-mLV" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="IC8-ij-mM8"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="oFi-3B-I6e" secondAttribute="trailing" constant="80" id="Q6k-x8-whF"/>
                             <constraint firstItem="oFi-3B-I6e" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="80" id="gLN-VD-AHh"/>
+                            <constraint firstItem="LkS-xi-ha1" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="hOH-jo-3Sx"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="WLc-67-tia" secondAttribute="trailing" id="lkm-Dj-uFU"/>
                             <constraint firstItem="1hB-xi-p8t" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="s00-hu-jtK"/>
                             <constraint firstItem="WLc-67-tia" firstAttribute="top" secondItem="oFi-3B-I6e" secondAttribute="bottom" constant="25" id="tBx-PT-rRM"/>
@@ -92,7 +106,9 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="attendance" destination="1hB-xi-p8t" id="ie0-Vb-GHy"/>
                         <outlet property="date_time" destination="WLc-67-tia" id="dxc-B1-HeG"/>
+                        <outlet property="leaving" destination="oFi-3B-I6e" id="eAj-6I-4x8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -103,6 +119,9 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray3Color">
+            <color red="0.78039215689999997" green="0.78039215689999997" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
