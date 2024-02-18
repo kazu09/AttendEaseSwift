@@ -1,0 +1,14 @@
+/* 
+  Localizable.strings
+  AttendEase
+
+  Created by kazu on 2024/02/17.
+  
+*/
+
+"attendance_button_text" = "出 勤";
+"leaving_button_text" = "退 勤";
+"date_time" = "2000/01/01 01:01:01";
+"download_button_text" = "ダウンロード";
+"set_lang_dialog_title" = "言語を設定する";
+"cancel" = "キャンセル";

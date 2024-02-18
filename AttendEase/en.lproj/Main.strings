@@ -1,0 +1,27 @@
+
+/* Class = "UIButton"; configuration.title = "Begin"; ObjectID = "1hB-xi-p8t"; */
+"1hB-xi-p8t.configuration.title" = "Begin";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "1hB-xi-p8t"; */
+"1hB-xi-p8t.normalTitle" = "Button";
+
+/* Class = "UIButton"; configuration.title = "Debug"; ObjectID = "LkS-xi-ha1"; */
+"LkS-xi-ha1.configuration.title" = "Debug";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "LkS-xi-ha1"; */
+"LkS-xi-ha1.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "2000/12/31 01:01:01"; ObjectID = "WLc-67-tia"; */
+"WLc-67-tia.text" = "2000/12/31 01:01:01";
+
+/* Class = "UIButton"; configuration.title = "Download"; ObjectID = "iME-FD-mLV"; */
+"iME-FD-mLV.configuration.title" = "Download";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "iME-FD-mLV"; */
+"iME-FD-mLV.normalTitle" = "Button";
+
+/* Class = "UIButton"; configuration.title = "Finish"; ObjectID = "oFi-3B-I6e"; */
+"oFi-3B-I6e.configuration.title" = "Finish";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "oFi-3B-I6e"; */
+"oFi-3B-I6e.normalTitle" = "Button";
