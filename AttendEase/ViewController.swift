@@ -58,7 +58,12 @@ class ViewController: UIViewController {
     }
 
     @IBAction func dowmload(_ sender: UIButton) {
-        
+        // Get current date colum in DB
+        let records = viewModel.fetchAttendanceRecordWithUserId(forUserId: userId)
+        for record in records  {
+            print("Record: userId=\(record.userId), date=\(record.date ?? "nil"), timeIn=\(record.timeIn), timeOut=\(record.timeOut)")
+        }
+        exportRecordsToTextFile(records: records)
     }
     
 //    debug button : All delete in DB
@@ -89,7 +94,7 @@ class ViewController: UIViewController {
     /**
      Get Current Date and time.
      
-     :returns: format yyyy/mm/dd hh:mm:ss
+    :returns: format yyyy/mm/dd hh:mm:ss
      */
     private func getDateTime() -> String {
         let dt = Date()
@@ -101,7 +106,7 @@ class ViewController: UIViewController {
     /**
      Get Current date
      
-     :returns: format yyyy-mm-dd
+    :returns: format yyyy-mm-dd
      */
     private func getCurrentDate() -> String {
         let dt = Date()
@@ -113,10 +118,26 @@ class ViewController: UIViewController {
     
     /**
      Get current unix time
-     :returns: unix time
+     
+    :returns: unix time
      */
     private func getCurrentUnixTime() -> Int64 {
         return Int64(Date().timeIntervalSince1970)
+    }
+    
+    /**
+     Convert unix time to date string.
+    
+    :param: TimeInterval unixTime
+    :returns: Date string
+     */
+    private func convertUnixTimeToString(unixTime: TimeInterval) -> String {
+        let date = Date(timeIntervalSince1970: unixTime)
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        dateFormatter.timeZone = TimeZone(identifier: "Asia/Tokyo")
+        let dateString = dateFormatter.string(from: date)
+        return dateString
     }
     
     /**
@@ -143,7 +164,7 @@ class ViewController: UIViewController {
     /**
      Change Language English or Japanese.
      
-     :param: lang LanguageCode.
+    :param: lang LanguageCode.
      */
     private func updateLocalizedText(lang: String) {
         // key : Localizable.strings key. value : IBOutlet
@@ -167,6 +188,41 @@ class ViewController: UIViewController {
                 return outgoing
             }
             value?.configuration = config
+        }
+    }
+    
+    /**
+     Export attendance record to text.
+     
+    :param: records AttendanceRecord
+     */
+    private func exportRecordsToTextFile(records: [AttendanceRecord]) {
+        let fileName = "AttendEase.txt"
+        let path = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!.appendingPathComponent(fileName)
+        
+        var text = ""
+        for record in records {
+            // Optional unwrap
+            let date = record.date ?? ""
+            if (date != "") {
+                // Go to the "else" if the "Finish" button is not tapped.
+                if (record.timeOut != 0) {
+                    let timeIn = convertUnixTimeToString(unixTime: TimeInterval(record.timeIn))
+                    let timeOut = convertUnixTimeToString(unixTime: TimeInterval(record.timeOut))
+                    text += "Date: \(date), Begin: \(timeIn), Finish: \(timeOut)\n"
+                } else {
+                    let timeIn = convertUnixTimeToString(unixTime: TimeInterval(record.timeIn))
+                    text += "Date: \(date), Begin: \(timeIn)\n"
+                }
+            }
+        }
+        
+        // Output text.
+        do {
+            try text.write(to: path, atomically: true, encoding: .utf8)
+            print("File written to \(path)")
+        } catch {
+            print("Failed to write file: \(error)")
         }
     }
     

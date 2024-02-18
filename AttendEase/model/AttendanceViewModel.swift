@@ -18,9 +18,9 @@ class AttendanceViewModel {
     /**
      Save data in database.
      
-     :param: userId userId
-     :param: date current date
-     :param: timeIn current unix time
+    :param: userId userId
+    :param: date current date
+    :param: timeIn current unix time
      */
     func insertAttendanceRecord(userId: Int64, date: String, timeIn: Int64) {
         let record = AttendanceRecord(context: context)
@@ -38,9 +38,9 @@ class AttendanceViewModel {
     /**
      Update data in database.
      
-     :param: userId userid
-     :param: date current date
-     :param: timeOut current unix time
+    :param: userId userid
+    :param: date current date
+    :param: timeOut current unix time
      */
     func updateAttendanceRecord(userId: Int64, date: String, timeOut: Int64) {
         let fetchRequest: NSFetchRequest<AttendanceRecord> = AttendanceRecord.fetchRequest()
@@ -60,7 +60,7 @@ class AttendanceViewModel {
     /**
      Get column matched with date.
      
-     :param: date current date
+    :param: date current date
      */
     func fetchAttendanceRecords(forDate date: String) -> [AttendanceRecord] {
         let fetchRequest: NSFetchRequest<AttendanceRecord> = AttendanceRecord.fetchRequest()
@@ -75,9 +75,27 @@ class AttendanceViewModel {
     }
     
     /**
+     Get column matched with userId.
+     
+    :param: date current date
+     */
+    func fetchAttendanceRecordWithUserId(forUserId userId: Int64) -> [AttendanceRecord] {
+        let fetchRequest: NSFetchRequest<AttendanceRecord> = AttendanceRecord.fetchRequest()
+            fetchRequest.predicate = NSPredicate(format: "userId == %d", userId)
+            
+            do {
+                let records = try context.fetch(fetchRequest)
+                return records
+            } catch {
+                print("Failed to fetch records for user \(userId): \(error)")
+                return []
+            }
+    }
+    
+    /**
      Delete column matched with userId.
      
-     :param: userId userId
+    :param: userId userId
      */
     func allDeleteAttendanceRecords(forUserId userId: Int64) {
         let fetchRequest: NSFetchRequest<AttendanceRecord> = AttendanceRecord.fetchRequest()

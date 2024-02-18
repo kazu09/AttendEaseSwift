@@ -11,7 +11,8 @@ class Language {
 
     /**
      Setting language
-     :param: code language code
+     
+    :param: code language code
      */
     func setLanguage(_ code: String) {
         guard let path = Bundle.main.path(forResource: code, ofType: "lproj"),
@@ -24,7 +25,8 @@ class Language {
 
     /**
      Get word in Localizable.strings.
-     :param: key Localizable.strings key
+     
+    :param: key Localizable.strings key
      */
     func localizedString(forKey key: String) -> String {
         return bundle?.localizedString(forKey: key, value: nil, table: nil) ?? key
