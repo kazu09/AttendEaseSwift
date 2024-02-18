@@ -121,8 +121,6 @@
                     <connections>
                         <outlet property="attendance" destination="1hB-xi-p8t" id="ie0-Vb-GHy"/>
                         <outlet property="date_time" destination="WLc-67-tia" id="dxc-B1-HeG"/>
-                        <outlet property="debugbutton" destination="LkS-xi-ha1" id="m0i-Nn-t8a"/>
-                        <outlet property="download" destination="iME-FD-mLV" id="vdb-DJ-E6p"/>
                         <outlet property="leaving" destination="oFi-3B-I6e" id="eAj-6I-4x8"/>
                     </connections>
                 </viewController>

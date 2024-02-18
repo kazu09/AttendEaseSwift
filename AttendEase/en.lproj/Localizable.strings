@@ -1,0 +1,14 @@
+/* 
+  Localizable.strings
+  AttendEase
+
+  Created by kazu on 2024/02/17.
+  
+*/
+
+"attendance_button_text" = "Begin";
+"leaving_button_text" = "Finish";
+"date_time" = "2000/01/01 01:01:01";
+"download_button_text" = "download";
+"set_lang_dialog_title" = "Setting language";
+"cancel" = "Cancel";

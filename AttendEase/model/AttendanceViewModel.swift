@@ -15,6 +15,13 @@ class AttendanceViewModel {
         self.context = context
     }
 
+    /**
+     Save data in database.
+     
+     :param: userId userId
+     :param: date current date
+     :param: timeIn current unix time
+     */
     func insertAttendanceRecord(userId: Int64, date: String, timeIn: Int64) {
         let record = AttendanceRecord(context: context)
         record.userId = userId
@@ -28,6 +35,13 @@ class AttendanceViewModel {
         }
     }
     
+    /**
+     Update data in database.
+     
+     :param: userId userid
+     :param: date current date
+     :param: timeOut current unix time
+     */
     func updateAttendanceRecord(userId: Int64, date: String, timeOut: Int64) {
         let fetchRequest: NSFetchRequest<AttendanceRecord> = AttendanceRecord.fetchRequest()
         fetchRequest.predicate = NSPredicate(format: "userId == %d AND date == %@", userId, date)
@@ -43,6 +57,11 @@ class AttendanceViewModel {
         }
     }
     
+    /**
+     Get column matched with date.
+     
+     :param: date current date
+     */
     func fetchAttendanceRecords(forDate date: String) -> [AttendanceRecord] {
         let fetchRequest: NSFetchRequest<AttendanceRecord> = AttendanceRecord.fetchRequest()
         fetchRequest.predicate = NSPredicate(format: "date == %@", date)
@@ -55,6 +74,11 @@ class AttendanceViewModel {
         }
     }
     
+    /**
+     Delete column matched with userId.
+     
+     :param: userId userId
+     */
     func allDeleteAttendanceRecords(forUserId userId: Int64) {
         let fetchRequest: NSFetchRequest<AttendanceRecord> = AttendanceRecord.fetchRequest()
         fetchRequest.predicate = NSPredicate(format: "userId == %@", NSNumber(value: userId))
